@@ -21,7 +21,7 @@ extras_require["all"] = sum(extras_require.values(), [])
 
 setuptools.setup(
     name="fleksychallenge",
-    version="1.0.0.dev0",
+    version="1.0.0",
     author="Nicolas REMOND",
     author_email="remondnicola@gmail.com",
     description="Part 1 of the Fleksy NLP challenge",
