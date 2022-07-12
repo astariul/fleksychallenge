@@ -68,10 +68,56 @@ fleksychallenge prepare
 
 It will download the dataset, preprocess it, and save the preprocessed data files locally.
 
+---
+
 By default, files are saved under the folder `tweet_dataset`, but you can change that behavior with the `--dataset` argument. For example:
 
 ```bash
 fleksychallenge prepare --dataset ../my/folder
+```
+
+### Train
+
+Once the dataset is ready, you can start training the model with :
+
+```bash
+fleksychallenge train
+```
+
+It will train the model and save it under `sentiment_model` by default.
+
+---
+
+You can change where to save the model by specifying the `--model` argument. For example :
+
+```bash
+fleksychallenge train --model my_model
+```
+
+---
+
+If you preprocessed your dataset in a different folder, you must specify the location with the `--dataset` argument :
+
+```bash
+fleksychallenge train --dataset ../my/folder
+```
+
+---
+
+A default configuration file is provided for training. You can also generate your own configuration file for training. To do this, head over to [Spacy documentation](https://spacy.io/usage/training#quickstart) and copy-paste the generated config in a file called `base_config.cfg`.
+
+Then, run :
+
+```bash
+python -m spacy init fill-config ./base_config.cfg ./config.cfg
+```
+
+It will save the full config file at `config.cfg`.
+
+Once your config file is generated, you can launch the training with :
+
+```bash
+fleksychallenge train --config config.cfg
 ```
 
 
