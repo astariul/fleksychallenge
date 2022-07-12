@@ -88,6 +88,14 @@ It will train the model and save it under `sentiment_model` by default.
 
 ---
 
+By default the model is trained on GPU. If you would like to train on CPU instead, you can specify the `--cpu` argument :
+
+```bash
+fleksychallenge train --cpu
+```
+
+---
+
 You can change where to save the model by specifying the `--model` argument. For example :
 
 ```bash
