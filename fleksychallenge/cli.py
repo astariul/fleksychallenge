@@ -9,7 +9,7 @@ def cli():
     parser.add_argument("--dataset", help="Where to save/load the dataset from", default="tweet_dataset")
     parser.add_argument("--config", help="Location of the config file to use for training", default="config.cfg")
     parser.add_argument("--model", help="Where to save/load the model from", default="sentiment_model")
-    parser.add_argument("--gpu", action="store_true")
+    parser.add_argument("--cpu", action="store_true", help="Use this option to train on CPU instead of GPU")
     parser.add_argument("--full", action="store_true")
     args = parser.parse_args()
 

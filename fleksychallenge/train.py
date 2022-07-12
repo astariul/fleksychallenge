@@ -27,7 +27,7 @@ def train(args):
     Args:
         args (argparse.Namespace): CLI arguments.
     """
-    use_gpu = 0 if args.gpu else -1
+    use_gpu = -1 if args.cpu else 0
     config_file = get_config(args.config)
 
     spacy_train(
