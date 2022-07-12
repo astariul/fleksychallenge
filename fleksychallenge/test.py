@@ -15,7 +15,7 @@ def test(args):
     and F-1 score.
 
     Args:
-        args (_type_): _description_
+        args (argparse.Namespace): CLI arguments.
     """
     # Load our model
     sentiment_model = spacy.load(os.path.join(args.model, "model-best"))
