@@ -5,7 +5,12 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 
-reqs = []
+reqs = [
+    "datasets==2.3.2",
+    "spacy==3.3.1",
+    "spacy-transformers==1.1.7",
+    "tweet-preprocessor==0.6.0",
+]
 
 extras_require = {
     "hook": ["pre-commit~=2.15"],
