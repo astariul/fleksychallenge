@@ -6,6 +6,7 @@ from fleksychallenge import interact, prepare, train
 def cli():
     parser = argparse.ArgumentParser(description="Fleksy challenge part 1")
     parser.add_argument("cmd", help="Command to execute", choices=["prepare", "train", "interact"])
+    parser.add_argument("--dataset", help="Where to save/load the dataset from", default="tweet_dataset")
     args = parser.parse_args()
 
     if args.cmd == "prepare":
