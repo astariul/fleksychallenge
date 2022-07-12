@@ -1,2 +1,2 @@
 def prepare(args):
-    pass
+    print("prepare")

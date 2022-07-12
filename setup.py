@@ -30,4 +30,7 @@ setuptools.setup(
     python_requires=">=3.7",
     install_requires=reqs,
     extras_require=extras_require,
+    entry_points={
+        "console_scripts": ["fleksychallenge=fleksychallenge.cli:cli"],
+    },
 )

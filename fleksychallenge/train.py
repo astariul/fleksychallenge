@@ -1,2 +1,2 @@
 def train(args):
-    pass
+    print("train")

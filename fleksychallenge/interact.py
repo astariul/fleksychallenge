@@ -1,2 +1,2 @@
 def interact(args):
-    pass
+    print("interact")
