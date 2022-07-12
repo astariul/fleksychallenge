@@ -38,4 +38,6 @@ setuptools.setup(
     entry_points={
         "console_scripts": ["fleksychallenge=fleksychallenge.cli:cli"],
     },
+    include_package_data=True,
+    package_data={"": ["config.cfg"]},
 )
