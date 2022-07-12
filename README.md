@@ -50,6 +50,10 @@ pip install -e .
 
 <h2 align="center">Usage</h2>
 
+<p align="center">
+    <a href="https://colab.research.google.com/drive/1ZRznDJYn9FW5jR6kbGpDfM6_h4yxg9zO?usp=sharing"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Colab link" /></a>
+</p>
+
 ### Prepare the dataset
 
 To prepare the dataset, just run :
