@@ -96,7 +96,7 @@ fleksychallenge train --model my_model
 
 ---
 
-If you preprocessed your dataset in a different folder, you must specify the location with the `--dataset` argument :
+If you preprocessed your dataset in a different folder, you must specify the location with the `--dataset` argument (similarly to the `prepare` command):
 
 ```bash
 fleksychallenge train --dataset ../my/folder
@@ -118,6 +118,28 @@ Once your config file is generated, you can launch the training with :
 
 ```bash
 fleksychallenge train --config config.cfg
+```
+
+### Test
+
+After training your model, you should test it ! You can do that with :
+
+```bash
+fleksychallenge test
+```
+
+It will load your trained model and compute several metrics (accuracy, precision, recall, F-1 score).
+
+If you have to pick a single metric for comparing different models, you should pick Recall (as advised in [the original paper of TweetEval](https://arxiv.org/pdf/2010.12421.pdf))
+
+---
+
+As before, you can specify a different dataset to use for testing with the `--dataset` argument, or a different model to load with the `--model` argument.
+
+Also, the test set of TweetEval is quite big (+12k samples), so by default the testing script will only evaluate the model on the first 100 samples. You can change this behavior by specifying the `--full` argument :
+
+```bash
+fleksychallenge test --full
 ```
 
 
