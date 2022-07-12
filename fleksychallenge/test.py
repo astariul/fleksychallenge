@@ -18,9 +18,11 @@ def test(args):
         args (argparse.Namespace): CLI arguments.
     """
     # Load our model
+    print("Loading model...")
     sentiment_model = spacy.load(os.path.join(args.model, "model-best"))
 
     # Load our dataset
+    print("Loading dataset...")
     dataset = load_from_disk(args.dataset)
 
     # Create the metrics
@@ -29,6 +31,7 @@ def test(args):
     recall = load_metric("recall")
     f1 = load_metric("f1")
 
+    print("Evaluating test set...")
     for i, tweet in enumerate(dataset["test"]):
         if not args.full and i > 100:
             # The test set is quite big (12k samples), it takes some time
@@ -50,7 +53,7 @@ def test(args):
         f1.add(prediction=pred_label, reference=tweet["label"])
 
     # Display metrics to user
-    print(f"Accuracy : {accuracy.compute()['accuracy']:.4f}")
+    print(f"\nAccuracy : {accuracy.compute()['accuracy']:.4f}")
     print(f"Precision : {precision.compute(average='macro')['precision']:.4f}")
     print(f">> Recall : {recall.compute(average='macro')['recall']:.4f}")
     print(f"F1-score : {f1.compute(average='macro')['f1']:.4f}")

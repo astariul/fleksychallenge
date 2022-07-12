@@ -35,15 +35,19 @@ def prepare(args):
         args (argparse.Namespace): CLI arguments.
     """
     # Load the Tweet Eval dataset (sentiment analysis part) from HuggingFace Hub
+    print("Loading Tweet Eval dataset from HuggingFace hub...")
     dataset = load_dataset("tweet_eval", "sentiment")
 
     # Apply preprocessing
+    print("Preprocessing the data...")
     dataset = dataset.map(preprocess)
 
     # Save the preprocessed dataset
+    print("Saving dataset...")
     dataset.save_to_disk(args.dataset)
 
     # Then, save the dataset in Spacy format
+    print("Saving dataset in Spacy format...")
     nlp = spacy.blank("en")
     for subset in ["train", "validation"]:
         db = DocBin()
@@ -66,3 +70,5 @@ def prepare(args):
                 doc.cats["negative"] = 0
             db.add(doc)
         db.to_disk(os.path.join(args.dataset, f"{subset}.spacy"))
+
+    print("All done !")
