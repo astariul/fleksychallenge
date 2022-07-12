@@ -10,6 +10,7 @@ reqs = [
     "spacy==3.3.1",
     "spacy-transformers==1.1.7",
     "tweet-preprocessor==0.6.0",
+    "sklearn==0.0",
 ]
 
 extras_require = {
