@@ -2,6 +2,8 @@ import os
 
 import spacy
 
+from fleksychallenge.prepare import preprocess
+
 
 def interact(args):
     """Function for the user to interact with a trained model.
@@ -14,17 +16,18 @@ def interact(args):
         args (argparse.Namespace): CLI arguments.
     """
     # Load our model
+    print("Loading model...")
     sentiment_model = spacy.load(os.path.join(args.model, "model-best"))
 
     text = ""
     while text != "qq":
         text = input("Type a tweet followed by Enter to analyze its sentiment, or `qq` for leaving :")
-        if x == "qq":
+        if text == "qq":
             break
-        elif len(x) == 0:
+        elif len(text) == 0:
             print("Coudln't detect any input... Type `qq` if you want to leave")
         else:
-            out = sentiment_model(preprocess({"text": x})["text"])
+            out = sentiment_model(preprocess({"text": text})["text"])
             print(out.cats)
 
     print("Bye ~")
