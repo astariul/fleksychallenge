@@ -148,6 +148,22 @@ Also, the test set of TweetEval is quite big (+12k samples), so by default the t
 fleksychallenge test --full
 ```
 
+### Interact
+
+You can also interact with your trained model, by running :
+
+```
+fleksychallenge interact
+```
+
+This will prompt you to enter a text. Enter a tweet followed by Enter, and your trained model will be used to analyze the sentiment of the tweet !
+
+To quit the script, enter `qq`.
+
+---
+
+You can specify a different model with the `--model` argument.
+
 
 <h2 align="center">Contribute</h2>
 
