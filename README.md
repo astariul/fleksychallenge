@@ -58,7 +58,21 @@ pip install -e .
 
 <h2 align="center">Usage</h2>
 
-TODO
+### Prepare the dataset
+
+To prepare the dataset, just run :
+
+```bash
+fleksychallenge prepare
+```
+
+It will download the dataset, preprocess it, and save the preprocessed data files locally.
+
+By default, files are saved under the folder `tweet_dataset`, but you can change that behavior with the `--dataset` argument. For example:
+
+```bash
+fleksychallenge prepare --dataset ../my/folder
+```
 
 
 <h2 align="center">Contribute</h2>
